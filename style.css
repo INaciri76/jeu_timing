@@ -1,0 +1,125 @@
+*{
+    margin:0;
+}
+
+.bloc {
+    position: fixed; /* fixe la vidéo à l'écran */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* derrière le contenu */
+}
+
+.bloc video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* assure que la vidéo remplit bien l'espace */
+    filter: brightness(50%);
+}
+.bloc::after {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgb(0, 0, 0); /* voile noir */
+    z-index:1;
+}
+
+body {
+   background-size: cover;          /* L’image couvre tout l’écran */
+    background-position: center;     /* Centre l’image */
+    background-repeat: no-repeat;    /* Empêche la répétition */
+    height: 100vh;                   /* Prend toute la hauteur visible */
+    width: 100%;                     /* Pleine largeur */
+    margin: 0;                       /* Supprime les marges par défaut */
+    overflow: hidden;                /* Évite le scroll inutile */
+    display: flex;                   /* Permet de centrer le contenu */
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 4rem !important;
+    color: #b7a021 !important; /* exemple : doré */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* ajoute un léger contour pour la lisibilité */
+}
+#startBtn {
+    margin-top: 30px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(19, 87, 19);
+    color: aliceblue;
+}
+#restartBtn{
+    margin-top: 30px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(87, 19, 19);
+    color: aliceblue;
+    
+}
+
+.lights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 60px); /* 3 colonnes */
+  grid-template-rows: repeat(3, 60px);    /* 3 lignes */
+  gap: 50px; 
+  margin: 50px;                             /* espace entre les ronds */
+  justify-content: center;                /* centre la grille horizontalement */
+  align-content: center;                  /* centre verticalement */
+  
+}
+
+.light {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #222;
+  border: 2px solid #444;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.light.on {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+.light.green {
+  background-color: limegreen;
+  transform: scale(1.1);
+}
+
+#message {
+    color: hsl(0, 0%, 100%) !important;
+    font-size: 2.3rem;
+    font-weight: bold;
+   border-bottom: solid 3px #c1c1c1;
+    max-width: 100%; 
+}
+#message:empty {
+    display: none;
+}
+
+@media (max-width: 768px) {
+  .lights-grid {
+    gap: 20px;
+  }
+  .light {
+    width: 50px;
+    height: 50px;
+  }
+  #startBtn, #restartBtn {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+}
