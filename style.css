@@ -35,17 +35,18 @@
 }
 
 body {
-   background-size: cover;          /* L’image couvre tout l’écran */
-    background-position: center;     /* Centre l’image */
-    background-repeat: no-repeat;    /* Empêche la répétition */
-    height: 100vh;                   /* Prend toute la hauteur visible */
-    width: 100%;                     /* Pleine largeur */
-    margin: 0;                       /* Supprime les marges par défaut */
-    overflow: hidden;                /* Évite le scroll inutile */
-    display: flex;                   /* Permet de centrer le contenu */
-    align-items: center;
+    overflow-y: auto; /* au lieu de hidden */
+    min-height: 100vh;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -54,14 +55,14 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* ajoute un léger contour pour la lisibilité */
 }
 #startBtn {
-    margin-top: 30px;
+    margin-top: 10px;
     width: 300px;
     border-radius: 10px;
     background-color: rgb(19, 87, 19);
     color: aliceblue;
 }
 #restartBtn{
-    margin-top: 30px;
+    margin-top: 10px;
     width: 300px;
     border-radius: 10px;
     background-color: rgb(87, 19, 19);
