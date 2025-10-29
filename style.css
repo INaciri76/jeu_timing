@@ -42,6 +42,7 @@ body {
     align-items: center;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    overflow-y: auto;
 }
 .container {
     display: flex;
@@ -101,7 +102,7 @@ h1 {
 }
 
 #message {
-    color: hsl(0, 0%, 100%) !important;
+    color:#b7a021 !important;
     font-size: 2.3rem;
     font-weight: bold;
    border-bottom: solid 3px #c1c1c1;
